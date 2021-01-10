@@ -1,4 +1,4 @@
-<%= flash[:notice] %>
+<p class="flash"><%= flash[:notice] %></p>
 
 <h1>Books</h1>
 
@@ -29,12 +29,14 @@
 <h2>New Book</h2>
 <%= form_for @book do |f| %>
  <% if @book.errors.any? %>
-  <h3><%= @book.errors.count %>errors prohibited this book from being saved:</h3>
+  <div class="box">
+  <h3 class="headline"><%= @book.errors.count %>errors prohibited this book from being saved:</h3>
   <ul>
     <% @book.errors.full_messages.each do |message| %>
     <li><%= message %></li>
     <% end %>
   </ul>
+  </div>
 <% end %>
 <% end %>
 
